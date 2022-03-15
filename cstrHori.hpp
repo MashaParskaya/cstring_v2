@@ -8,18 +8,27 @@
 
 using namespace std;
 
-class CStringH : public CString {
-public:
+namespace cstr_hori_vert{
 
-  virtual void output(const char *FILE_NAME=NULL);
+  class CStringH final : public CString {
+  public:
+    using CString::operator=;
 
-  CStringH(const char* tmp, int len, string filename="STDOUT");
+    CStringH operator+ (CString& a);
 
-  CStringH(CString &tmp, string filename="STDOUT");
+    virtual void output(const char *FILE_NAME=NULL) override final;
 
-  CStringH();
+    //friend CStringH operator+ (CString& a, CString& b);
 
-  ~CStringH();
-};
+    CStringH();
+
+    CStringH(const char* tmp, int len, string filename="STDOUT");
+
+    CStringH(CString &tmp, string filename="STDOUT");
+
+    ~CStringH();
+  };
+
+}
 
 #endif

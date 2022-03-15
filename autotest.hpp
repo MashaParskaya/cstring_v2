@@ -10,6 +10,7 @@
 #include "cstrVert.hpp"
 
 using namespace std;
+using namespace cstr_hori_vert;
 
 int test1();
 

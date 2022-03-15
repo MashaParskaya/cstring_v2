@@ -6,7 +6,7 @@ int test1(){
   for (int i = 0; i < n; i++){
     b[i] = 'a';
   }
-  CString s(b, n);
+  CStringH s(b, n);
   if (s.get_length() != n){
     cout << "TEST 1 ERROR\n";
     return 0;
@@ -27,12 +27,12 @@ int test2(){
   for (int i = 0; i < n; i++){
     b[i] = 'a';
   }
-  CString s(b, n);
+  CStringH s(b, n);
   if (s.get_length() != n){
     cout << "TEST 2 ERROR\n";
     return 0;
   }
-  CString s1(s);
+  CStringH s1(s);
   if (s1.get_length() != n){
     cout << "TEST 2 ERROR\n";
     return 0;
@@ -53,12 +53,12 @@ int test3(){
   for (int i = 0; i < n; i++){
     b[i] = 'a';
   }
-  CString s(b, n);
+  CStringV s(b, n);
   if (s.get_length() != n){
     cout << "TEST 3 ERROR\n";
     return 0;
   }
-  CString s1;
+  CStringV s1;
   s1 = s;
   if (s1.get_length() != n){
     cout << "TEST 3 ERROR\n";
@@ -85,8 +85,8 @@ int test4(){
   for (int i = 0; i < m; i++){
     c[i] = '1';
   }
-  CString s(b, n);
-  CString s1(c, m);
+  CStringV s(b, n);
+  CStringV s1(c, m);
   if (s.get_length() != n){
     cout << "TEST 4 ERROR\n";
     return 0;
@@ -95,7 +95,7 @@ int test4(){
     cout << "TEST 4 ERROR\n";
     return 0;
   }
-  CString s2(s);
+  CStringV s2(s);
   s2 = s + s1;
   if (s2.get_length() != n + m){
     cout << "TEST 4 ERROR\n";
@@ -119,7 +119,7 @@ int test4(){
 
 int test5(){
   string b = "aaaaaaaaaa";
-  CString s;
+  CStringH s;
   s = b;
   if (s.get_length() != b.size()){
     cout << "TEST 5 ERROR\n";
@@ -137,7 +137,7 @@ int test5(){
 
 int test6(){
   string b = "aaaaaaaaaa";
-  CString s;
+  CStringV s;
   s = b;
   CStringH sH(s);
   sH.output("CString_test6.test");
@@ -158,7 +158,7 @@ int test6(){
 
 int test7(){
   string b = "aaaaaaaaaa";
-  CString s;
+  CStringH s;
   s = b;
   CStringV sV(s);
   sV.output("CString_test7.test");

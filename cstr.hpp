@@ -6,40 +6,40 @@
 
 using namespace std;
 
-class CString {
-private:
-  int length;
-  char* stroka;
-  string fileout;
-public:
-  void set_str(int len);
+namespace cstr_hori_vert{
 
-  void set_element(int pos, char el);
+  class CString {
+  private:
+    int length;
+    char* stroka;
+    string fileout;
+  public:
+    void set_str(int len);
 
-  void set_filename(string filename);
+    void set_element(int pos, char el);
 
-  char get_element(int pos);
+    void set_filename(string filename);
 
-  int get_length();
+    char get_element(int pos);
 
-  string get_filename();
+    int get_length();
 
-  virtual void output(const char *FILE_NAME=NULL);
+    string get_filename();
 
-  CString(const char* tmp, int len, string filename="STDOUT");
+    virtual void output(const char *FILE_NAME=NULL) = 0;
 
-  CString(CString &tmp, string filename="STDOUT");
+    CString();
 
-  CString();
+    CString(const char* tmp, int len, string filename="STDOUT");
 
-  ~CString();
+    CString(CString &tmp, string filename="STDOUT");
 
-  CString& operator= (const CString& a);
+    CString& operator= (const CString& a);
 
-  CString& operator= (const string& a);
+    CString& operator= (const string& a);
 
-  const CString operator+ (const CString a);
-
-};
+    virtual ~CString();
+  };
+}
 
 #endif

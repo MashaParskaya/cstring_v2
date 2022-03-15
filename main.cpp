@@ -3,12 +3,13 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include "cstr.hpp"
 #include "cstrHori.hpp"
 #include "cstrVert.hpp"
+#include "cstr.hpp"
 #include "autotest.hpp"
 
 using namespace std;
+using namespace cstr_hori_vert;
 
 int main(){
   Autotest();

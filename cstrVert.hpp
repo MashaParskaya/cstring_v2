@@ -5,21 +5,29 @@
 #include <fstream>
 #include <string>
 #include "cstr.hpp"
+#include "cstrHori.hpp"
 
 using namespace std;
 
-class CStringV : public CString {
-public:
+namespace cstr_hori_vert{
 
-  virtual void output(const char *FILE_NAME=NULL);
+  class CStringV final : public CString {
+  public:
+    using CString::operator=;
 
-  CStringV(const char* tmp, int len, string filename="STDOUT");
+    CStringV operator+ (CString& a);
 
-  CStringV(CString &tmp, string filename="STDOUT");
+    virtual void output(const char *FILE_NAME=NULL) override final;
 
-  CStringV();
+    CStringV(const char* tmp, int len, string filename="STDOUT");
 
-  ~CStringV();
-};
+    CStringV(CString &tmp, string filename="STDOUT");
+
+    CStringV();
+
+    ~CStringV();
+  };
+
+}
 
 #endif
