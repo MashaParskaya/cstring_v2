@@ -48,4 +48,6 @@ int main(){
   for (int i = 0; i < vectorVector.size(); i++){
         vectorVector[i]->output(vectorVector[i]->get_filename().c_str());
   }
+
+  return 1;
 }
